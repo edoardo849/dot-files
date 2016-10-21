@@ -1,7 +1,6 @@
 [user]
-	name = Tim Blackwell
-	email = timmblackwell@gmail.com
-	signingkey = 6C0B8751
+	name = Edoardo Paolo Scalafiotti
+	email = edoardo849@gmail.com
 [credential]
 	helper = osxkeychain
 [core]
@@ -36,7 +35,7 @@
     unstage = reset HEAD --
     edit = "!nvim `git ls-files -m`"
 [github]
-    user = timblackwell
+    user = edoardo849
 [diff]
     tool = nvimdiff
 [difftool "nvimdiff"]
