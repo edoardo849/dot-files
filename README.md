@@ -9,6 +9,9 @@ git clone git@github.com:edoardo849/dot-files.git
 
 # Install neovim...
 
+# Install Plug Manager...
+# https://github.com/junegunn/vim-plug
+
 # Create symlinks
 ln -s ~/dot-files/init.vim .vimrc
 
@@ -30,4 +33,5 @@ Config:
 
 How Tos:
 
+**Select Multiple lines**
 To select multiple lines, press v or V and then the arrow keys to go up and down. If the mappings are set up ar to sheerun's post, then do `SPACE + y` to copy and `SPACE + p` to paste. 
