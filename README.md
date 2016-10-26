@@ -20,3 +20,14 @@ ln -s ~/dot-files/init.vim  ~/.config/nvim/init.vim
 ln -s ~/dot-files/zshrc.bash ~/.zshrc
 
 ```
+
+
+Cheatsheets:
+- http://vim.rtorr.com/
+
+Config:
+- https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+
+How Tos:
+
+To select multiple lines, press v or V and then the arrow keys to go up and down. If the mappings are set up ar to sheerun's post, then do `SPACE + y` to copy and `SPACE + p` to paste. 
