@@ -13,6 +13,9 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
+" " Syntax checking hacks for vim
+Plug 'scrooloose/syntastic'
+
 call plug#end()
 
 " config code here
@@ -20,8 +23,15 @@ syntax on
 
 set number
 
+set tabstop=4
+set softtabstop=0 noexpandtab
+set shiftwidth=4
+
 let g:molokai_original = 1
 let g:rehash256 = 1
+
+" " Make NERDTree always open on the right side
+let g:NERDTreeWinPos = "left"
 
 " " Map the leader to the space key
 let mapleader = "\<Space>"
@@ -43,11 +53,36 @@ vmap <Leader>P "+P
 " " Open NerdTree with <Space>n
 map <Leader>n  :NERDTreeToggle<CR>
 
-
 " " have your code be formatted upon saving your file, depending on Chiel92/vim-autoformat
 au BufWrite * :Autoformat
 
 " " Enter visual line mode with <Space><Space>
 nmap <Leader><Leader> V
+
+
+" " vim-go Settings
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" " syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+
+" " Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 colorscheme molokai

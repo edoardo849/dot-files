@@ -39,6 +39,7 @@ Cheatsheets:
 Config:
 - https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 - https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
+- http://www.zhubert.com/blog/2014/02/11/setting-up-go/ GOPATH for zsh
 
 
 Plugins:
