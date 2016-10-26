@@ -1,4 +1,5 @@
-# dot-files
+Dot Files
+===
 
 Setup
 
@@ -22,6 +23,13 @@ ln -s ~/dot-files/init.vim  ~/.config/nvim/init.vim
 # Symlink for zsh
 ln -s ~/dot-files/zshrc.bash ~/.zshrc
 
+# Install dependencies for auto complete:
+npm install -g js-beautify
+
+# Install python support https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+pip2 install --user neovim
+pip3 install --user neovim
+
 ```
 
 
@@ -30,8 +38,26 @@ Cheatsheets:
 
 Config:
 - https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+- https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
+
+
+Plugins:
+- https://github.com/Chiel92/vim-autoformat Autoformatter
+
 
 How Tos:
 
-**Select Multiple lines**
-To select multiple lines, press v or V and then the arrow keys to go up and down. If the mappings are set up ar to sheerun's post, then do `SPACE + y` to copy and `SPACE + p` to paste. 
+## Select Multiple lines
+To select multiple lines, press v or V and then the arrow keys to go up and down. If the mappings are set up ar to sheerun's post, then do `SPACE + y` to copy and `SPACE + p` to paste.
+
+## NerdTree commands
+Type :help NERDTreeMappings to read through all of the default keyboard shortcuts. These are the ones I use the most frequently:
+
+t: Open the selected file in a new tab
+i: Open the selected file in a horizontal split window
+s: Open the selected file in a vertical split window
+I: Toggle hidden files
+m: Show the NERD Tree menu
+R: Refresh the tree, useful if files change outside of Vim
+?: Toggle NERD Tree's quick help
+

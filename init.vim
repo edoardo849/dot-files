@@ -6,6 +6,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go'
 Plug 'moll/vim-node'
+" " Provide easy code formatting in Vim by integrating existing code formatters.
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -33,6 +35,13 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+" " Open NerdTree with <Space>n
+map <Leader>n  :NERDTreeToggle<CR>
+
+
+" " have your code be formatted upon saving your file, depending on Chiel92/vim-autoformat
+au BufWrite * :Autoformat
 
 " " Enter visual line mode with <Space><Space>
 nmap <Leader><Leader> V
