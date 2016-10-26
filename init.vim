@@ -9,6 +9,10 @@ Plug 'moll/vim-node'
 " " Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'Chiel92/vim-autoformat'
 
+" " Provide autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+
 call plug#end()
 
 " config code here
@@ -46,4 +50,4 @@ au BufWrite * :Autoformat
 " " Enter visual line mode with <Space><Space>
 nmap <Leader><Leader> V
 
-colorscheme molokai 
+colorscheme molokai
