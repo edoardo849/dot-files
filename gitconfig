@@ -1,14 +1,20 @@
 [user]
 name = Edoardo Paolo Scalafiotti
 email = edoardo849@gmail.com
+signingkey = CF70767C
+
 [credential]
 helper = osxkeychain
+
 [core]
 editor = nvim
+excludesfile = ~/dot-files/gitignore_global
+
 [filter "lfs"]
 required = true
 clean = git-lfs clean %f
 smudge = git-lfs smudge %f
+
 [alias]
 a = add
 aa = add --all
@@ -34,9 +40,12 @@ g2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)
 wc = whatchanged -p --abbrev-commit --pretty=medium
 unstage = reset HEAD --
 edit = "!nvim `git ls-files -m`"
+
 [github]
 user = edoardo849
+
 [diff]
 tool = nvimdiff
+
 [difftool "nvimdiff"]
 cmd = diff_wrapper "$LOCAL" "$REMOTE"

@@ -23,6 +23,9 @@ ln -s ~/dot-files/init.vim  ~/.config/nvim/init.vim
 # Symlink for zsh
 ln -s ~/dot-files/zshrc.bash ~/.zshrc
 
+# Symlink for git
+ln -s ~/dot-files/gitconfig ~/.gitconfig
+
 # Install dependencies for auto complete:
 npm install -g js-beautify
 
