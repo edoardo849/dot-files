@@ -29,6 +29,9 @@ ln -s ~/dot-files/gitconfig ~/.gitconfig
 # Install dependencies for auto complete:
 npm install -g js-beautify
 
+# Install Racer, code completion for RUST https://github.com/phildawes/racer
+cargo install racer
+
 # Install python support https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
 pip2 install --user neovim
 pip3 install --user neovim

@@ -4,17 +4,25 @@ call plug#begin('~/.vim/plugged')
 Plug 'fatih/molokai'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'fatih/vim-go'
-Plug 'moll/vim-node'
 " " Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'Chiel92/vim-autoformat'
+
+" " Syntax checking hacks for vim
+Plug 'scrooloose/syntastic'
+
+Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim'
+
+" " Programming Languages features
+
+Plug 'hashivim/vim-terraform'
+Plug 'fatih/vim-go'
+Plug 'moll/vim-node'
+Plug 'rust-lang/rust.vim'
 
 " " Provide autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-
-" " Syntax checking hacks for vim
-Plug 'scrooloose/syntastic'
 
 call plug#end()
 
@@ -29,6 +37,13 @@ set shiftwidth=4
 
 let g:molokai_original = 1
 let g:rehash256 = 1
+colorscheme molokai
+
+" " Perform terraform FMT on save
+let g:terraform_fmt_on_save = 1
+
+" " Perform rust FMT on save
+let g:rustfmt_autosave = 1
 
 " " Make NERDTree always open on the right side
 let g:NERDTreeWinPos = "left"
@@ -85,4 +100,3 @@ let g:go_list_type = "quickfix"
 " " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
-colorscheme molokai
