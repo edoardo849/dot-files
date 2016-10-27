@@ -23,6 +23,7 @@ Plug 'rust-lang/rust.vim'
 " " Provide autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
@@ -42,8 +43,12 @@ colorscheme molokai
 " " Perform terraform FMT on save
 let g:terraform_fmt_on_save = 1
 
-" " Perform rust FMT on save
+" " RUST
 let g:rustfmt_autosave = 1
+set hidden
+let g:racer_cmd = "~/.cargo/bin/racer"
+let $RUST_SRC_PATH="~/src/rust/src"
+
 
 " " Make NERDTree always open on the right side
 let g:NERDTreeWinPos = "left"
