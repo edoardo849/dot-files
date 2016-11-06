@@ -121,13 +121,10 @@ if [ ! -L "$vimConfig" ]; then
     ln -s $dotFiles/init.vim $vimConfig
 fi
 
-vimFolder=$HOME/.vim
-if [ -d "$vimFolder" ] && [ ! -L "$vimFolder" ]; then
-    mv $vimFolder $vimFolder.backup
-fi
+vimColorFolder=$HOME/.vim/colors
 
-if [ ! -L "$vimFolder" ]; then
-    ln -s $dotFiles/vim $vimFolder
+if [ ! -L "$vimColorFolder" ]; then
+    ln -s $dotFiles/vim/colors $vimColorFolder
 fi
 
 # GIT Config
