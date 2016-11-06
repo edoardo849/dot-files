@@ -5,28 +5,43 @@ Setup
 
 ```bash
 
+# Install GoLang https://golang.org/doc/install
+# if linux:
+wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
+tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+
+
 # clone the repo from the home dir
-git clone git@github.com:edoardo849/dot-files.git
+git clone git@github.com:edoardo849/dot-files.git .dotfiles
 
 # Install neovim...
 
-# Install Plug Manager...
+wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz# Install Plug Manager...
 # https://github.com/junegunn/vim-plug
 
 # Create symlinks
-ln -s ~/dot-files/init.vim .vimrc
+mv ~/.vimrc .vimrc.backup
+ln -s ~/.dotfiles/init.vim .vimrc
 
+mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.backup
 ln -s ~/dot-files/init.vim  ~/.config/nvim/init.vim
 
 # Install zsh...
 
 # Symlink for zsh
+mv ~/.zshrc ~/.zshrc.backup
 ln -s ~/dot-files/zshrc.bash ~/.zshrc
 
 # Symlink for git
 ln -s ~/dot-files/gitconfig ~/.gitconfig
 
 # Install dependencies for auto complete:
+pacman -S nodejs npm
+# https://docs.npmjs.com/getting-started/fixing-npm-permissions
+# Fix npm permissions
+npm config get prefix
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+
 npm install -g js-beautify
 
 # Install Racer, code completion for RUST https://github.com/phildawes/racer
