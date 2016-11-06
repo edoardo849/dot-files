@@ -3,7 +3,13 @@ dotFiles=$HOME/.dotfiles
 if [ ! -d "$dotFiles" ]; then
 	git clone git@github.com:edoardo849/dot-files.git $dotFiles
 fi
-
+# Install Gnupg
+if hash gpg 2>/dev/null; then
+	echo 'Gnupg already installed'
+else
+	echo 'Installing Gnupg'
+	sudo pacman -S gnupg
+fi
 # Install Redshift
 if hash redshift 2>/dev/null; then
 	echo 'Redshift already installed'
@@ -26,7 +32,14 @@ else
 	echo 'Installing Google Chrome'
 	yaourt google-chrome
 fi
-# Install Spotify
+
+# Install Insync
+if hash insync 2>/dev/null; then
+	echo 'Insync already installed'
+else
+	echo 'Installing Insnc'
+	yaourt insync
+fi
 if hash spotify 2>/dev/null; then
 	echo 'Spotify already installed'
 else
@@ -117,6 +130,15 @@ fi
 
 if [ ! -L "$vimFile" ]; then
 	ln -s $dotFiles/init.vim $vimFile
+fi
+
+redshiftConf=$HOME/.config/redshift.conf
+if [ -f "$redshiftConf" ] && [ ! -L "$redshiftConf" ]; then
+	mv $redshiftConf $redshiftConf.backup
+fi
+
+if [ ! -L "$redshiftConf" ]; then
+	ln -s $dotFiles/redshift.conf $redshiftConf
 fi
 
 vimConfig=$HOME/.config/nvim/init.vim
