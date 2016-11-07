@@ -3,57 +3,27 @@ Dot Files
 
 Setup
 
+To Install on Arch, just run:
+
 ```bash
 
-# Install GoLang https://golang.org/doc/install
-# if linux:
-wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
-tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
-
-
-# clone the repo from the home dir
-git clone git@github.com:edoardo849/dot-files.git .dotfiles
-
-# Install neovim...
-
-wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz# Install Plug Manager...
-# https://github.com/junegunn/vim-plug
-
-# Create symlinks
-mv ~/.vimrc .vimrc.backup
-ln -s ~/.dotfiles/init.vim .vimrc
-
-mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.backup
-ln -s ~/dot-files/init.vim  ~/.config/nvim/init.vim
-
-# Install zsh...
-
-# Symlink for zsh
-mv ~/.zshrc ~/.zshrc.backup
-ln -s ~/dot-files/zshrc.bash ~/.zshrc
-
-# Symlink for git
-ln -s ~/dot-files/gitconfig ~/.gitconfig
-
-# Install dependencies for auto complete:
-pacman -S nodejs npm
-# https://docs.npmjs.com/getting-started/fixing-npm-permissions
-# Fix npm permissions
-npm config get prefix
-sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
-
-npm install -g js-beautify
-
-# Install Racer, code completion for RUST https://github.com/phildawes/racer
-cargo install racer
-
-# Install python support https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
-pip2 install --user neovim
-pip3 install --user neovim
+sh -c "$(wget https://raw.githubusercontent.com/edoardo849/dot-files/arch/install.sh)"
 
 ```
 
+This script will setup the standard programming environment with:
+- Golang
+- Rust
+- Ruby
+- NodeJS
+- Google Chrome
+- Spotify
+- Redshift
+- NeoVim
+- Oh My Zsh
+- ... several dependencies.
 
+## NeoVim
 Cheatsheets:
 - http://vim.rtorr.com/
 
@@ -69,10 +39,10 @@ Plugins:
 
 How Tos:
 
-## Select Multiple lines
+### Select Multiple lines
 To select multiple lines, press v or V and then the arrow keys to go up and down. If the mappings are set up ar to sheerun's post, then do `SPACE + y` to copy and `SPACE + p` to paste.
 
-## NerdTree commands
+### NerdTree commands
 Type :help NERDTreeMappings to read through all of the default keyboard shortcuts. These are the ones I use the most frequently:
 
 t: Open the selected file in a new tab
