@@ -1,9 +1,7 @@
 Dot Files
 ===
 
-Setup
-
-To Install on Arch, just run:
+To Install on [Antergos](https://antergos.com/) Arch, just run:
 
 ```bash
 
@@ -22,6 +20,8 @@ This script will setup the standard programming environment with:
 - NeoVim
 - Oh My Zsh
 - ... several dependencies.
+
+To fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archlinux.org/index.php/Razer) wiki page.
 
 ## NeoVim
 Cheatsheets:

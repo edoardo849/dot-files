@@ -9,6 +9,7 @@ fi
 echo 'Installing supported packages'
 
 sudo pacman -S \
+	xf86-input-libinput \
 	gnupg \
 	redshift \
 	ruby \
@@ -23,6 +24,7 @@ sudo pacman -S \
 
 echo 'Installing community packages'
 yaourt \
+	touchegg \
 	google-chrome \
 	spotify \
 	insync
