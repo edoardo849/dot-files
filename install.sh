@@ -3,100 +3,57 @@ dotFiles=$HOME/.dotfiles
 if [ ! -d "$dotFiles" ]; then
 	git clone git@github.com:edoardo849/dot-files.git $dotFiles
 fi
+
+
+# Installing supported packages
+echo 'Installing supported packages'
+
+sudo pacman -S \
+	gnupg \
+	redshift \
+	ruby \
+	zsh \
+	zsh-completions \
+	nodejs \
+	npm \
+	neovim \
+	python2-neovim \
+	python-neovim \
+	jq
+
+echo 'Installing community packages'
+yaourt \
+	google-chrome \
+	spotify \
+	insync
+
 # Install Gnupg
-if hash gpg 2>/dev/null; then
-	echo 'Gnupg already installed'
-else
-	echo 'Installing Gnupg'
-	sudo pacman -S gnupg
-fi
-# Install Redshift
-if hash redshift 2>/dev/null; then
-	echo 'Redshift already installed'
-else
-	echo 'Installing Redshift'
-	sudo pacman -S redshift
-fi
-# Install Ruby
-if hash ruby 2>/dev/null; then
-	echo 'Ruby already installed'
-else
-	echo 'Installing Ruby'
-	sudo pacman -S ruby
-fi
+#if hash gpg 2>/dev/null; then
+#	echo 'Gnupg already installed'
+#else
+#	echo 'Installing Gnupg'
+#	sudo pacman -S gnupg
+#fi
 
-# Install Google Chrome
-if hash google-chrome-stable 2>/dev/null; then
-	echo 'Google Chrome already installed'
-else
-	echo 'Installing Google Chrome'
-	yaourt google-chrome
-fi
-
-# Install Insync
-if hash insync 2>/dev/null; then
-	echo 'Insync already installed'
-else
-	echo 'Installing Insnc'
-	yaourt insync
-fi
-if hash spotify 2>/dev/null; then
-	echo 'Spotify already installed'
-else
-	echo 'Installing Spotify'
-	yaourt spotify
-fi
-
-# Install Golang
 if hash /usr/local/go/bin/go 2>/dev/null; then
 	echo 'GoLang already installed'
 else
-	echo 'Installing GoLang'
+	echo 'Installing GoLang 1.7'
 	wget "https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz" -P /tmp && sudo tar -C /usr/local -xzf /tmp/go1.7.3.linux-amd64.tar.gz
 fi
 
-if hash zsh 2>/dev/null; then
-	echo 'Zsh already installed'
-else
-	echo 'Installing Zsh'
-	sudo pacman -S zsh zsh-completions
-	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-	chsh -s /bin/zsh
-fi
+echo 'Setting Zsh'
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+#chsh -s /bin/zsh
 
-# NodeJS
-if hash node 2>/dev/null; then
-	echo 'Nodejs already installed'
-else
-	echo 'Installing Nodejs'
-	sudo pacman -S nodejs npm
-fi
+echo 'Setup Neovim and Plug'
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-if hash nvim 2>/dev/null; then
-	echo 'Neovim already installed'
-else
-	echo 'Installing Neovim'
-	sudo pacman -S neovim python2-neovim python-neovim
-	echo 'Installing Plug'
-	curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-if hash rustc 2>/dev/null; then
-	echo 'Rust already installed'
-else
-	echo 'Installing Rust'
-	curl -sSf https://static.rust-lang.org/rustup.sh | sh
-	# Code completion for rust
-	cargo install racer
-fi
-
-if hash jq 2>/dev/null; then
-	echo 'JQ already installed'
-else
-	echo 'Installing JQ'
-	sudo pacman -S jq
-fi
+echo 'Installling Rust'
+curl -sSf https://static.rust-lang.org/rustup.sh | sh
+# Code completion for rust
+cargo install racer
 
 echo 'Setting up Development environment'
 devDir=$HOME/Development
@@ -118,62 +75,78 @@ else
 	cd $HOME
 fi
 
+
 goDir=$devDir/go
 if [ ! -d "$goDir" ]; then
+	echo "- Creating $goDir"
 	mkdir $goDir
 fi
 
 vimFile=$HOME/.vimrc
 if [ -f "$vimFile" ] && [ ! -L "$vimFile" ]; then
+	echo "- Backing up $vimFile"
 	mv $vimFile $vimFile.backup
 fi
 
 if [ ! -L "$vimFile" ]; then
+	echo "- Linking $vimFile to $dotFiles"
 	ln -s $dotFiles/init.vim $vimFile
 fi
 
 redshiftConf=$HOME/.config/redshift.conf
 if [ -f "$redshiftConf" ] && [ ! -L "$redshiftConf" ]; then
+	echo "- Backing up $redshiftConf"
 	mv $redshiftConf $redshiftConf.backup
 fi
 
 if [ ! -L "$redshiftConf" ]; then
+	echo "- Linking $redshiftConf to $dotFiles"
 	ln -s $dotFiles/redshift.conf $redshiftConf
 fi
 
 vimConfig=$HOME/.config/nvim/init.vim
 if [ -f "$vimConfig" ] && [ ! -L "$vimConfig" ]; then
+	echo "- Backing up $vimConfig"
 	mv $vimConfig $vimConfig.backup
 fi
 
 if [ ! -L "$vimConfig" ]; then
+	echo "- Linking $vimConfig to $dotFiles"
 	ln -s $dotFiles/init.vim $vimConfig
 fi
 
 vimColorFolder=$HOME/.vim/colors
 
 if [ ! -L "$vimColorFolder" ]; then
+	echo "- Backing up $vimColorFolder"
 	ln -s $dotFiles/vim/colors $vimColorFolder
 fi
 
 # GIT Config
 gitConfig=$HOME/.gitconfig
 if [ -f "$gitConfig" ] && [ ! -L "$gitConfig" ]; then
+	echo "- Backing up $gitConfig"
 	mv $gitConfig $gitConfig.backup
 fi
 
 if [ ! -L "$gitConfig" ]; then
+	echo "- Likning $gitConfig to $dotFiles"
 	ln -s $dotFiles/gitconfig $gitConfig
 fi
 
 # ZSH Config
 zshConfig=$HOME/.zshrc
 if [ -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
+	echo "- Backing up $zshConfig"
 	mv $zshConfig $zshConfig.backup
 fi
 
 if [ ! -L "$zshConfig" ]; then
+	echo "- Linking $zshConfig to $dotFiles"
 	ln -s $dotFiles/zshrc.sh $zshConfig
 fi
 
+echo 'Installing js-beautify'
 sudo npm install -g js-beautify
+
+echo 'Success! Now run "chsh -s /bin/zsh" to setup zsh as the default shell and run :PlugInstall from within nvim'
