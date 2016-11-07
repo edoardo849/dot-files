@@ -1,4 +1,6 @@
 
+cd $HOME
+
 dotFiles=$HOME/.dotfiles
 if [ ! -d "$dotFiles" ]; then
 	git clone git@github.com:edoardo849/dot-files.git $dotFiles
@@ -44,9 +46,6 @@ else
 	wget "https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz" -P /tmp && sudo tar -C /usr/local -xzf /tmp/go1.7.3.linux-amd64.tar.gz
 fi
 
-echo 'Setting Zsh'
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-#chsh -s /bin/zsh
 
 echo 'Setup Neovim and Plug'
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
@@ -77,6 +76,12 @@ else
 	cd $HOME
 fi
 
+echo 'Installing Amazon AWS CLI'
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "/tmp/awscli-bundle.zip"
+cd /tmp
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+cd $HOME
 
 goDir=$devDir/go
 if [ ! -d "$goDir" ]; then
@@ -142,6 +147,13 @@ if [ -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
 	echo "- Backing up $zshConfig"
 	mv $zshConfig $zshConfig.backup
 fi
+
+
+if [ ! -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
+	echo "- Setting up Zsh"
+	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+fi
+
 
 if [ ! -L "$zshConfig" ]; then
 	echo "- Linking $zshConfig to $dotFiles"
