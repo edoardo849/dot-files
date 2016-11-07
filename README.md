@@ -1,6 +1,5 @@
 Dot Files
 ===
-X
 To Install on [Antergos](https://antergos.com/) Arch, just run:
 
 ```bash
