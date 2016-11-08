@@ -23,14 +23,16 @@ fi
 	#	python2-neovim \
 	#	python-neovim \
 	#	jq \
-	#	go
+	#	go \
+	#	clang # for swift
 
 #echo 'Installing community packages'
 #yaourt \
 	#	touchegg \
 	#	google-chrome \
 	#	spotify \
-	#	insync
+	#	insync \
+	#	swift
 
 # Install Gnupg
 #if hash gpg 2>/dev/null; then
