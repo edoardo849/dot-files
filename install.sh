@@ -7,32 +7,40 @@ if [ ! -d "$dotFiles" ]; then
 fi
 
 
-# Installing supported packages
-#echo 'Installing supported packages'
+#pacmanPkgs = ()
 
-#sudo pacman -S \
-	#	xf86-input-libinput \
-	#	gnupg \
-	#	redshift \
-	#	ruby \
-	#	zsh \
-	#	zsh-completions \
-	#	nodejs \
-	#	npm \
-	#	neovim \
-	#	python2-neovim \
-	#	python-neovim \
-	#	jq \
-	#	go \
-	#	clang # for swift
+supported_pkg () {
+	echo 'Installing supported packages'
 
-#echo 'Installing community packages'
-#yaourt \
-	#	touchegg \
-	#	google-chrome \
-	#	spotify \
-	#	insync \
-	#	swift
+	sudo pacman -S \
+		xf86-input-libinput \
+		gnupg \
+		redshift \
+		ruby \
+		zsh \
+		zsh-completions \
+		nodejs \
+		npm \
+		neovim \
+		python2-neovim \
+		python-neovim \
+		jq \
+		go \
+		clang # for swift
+
+}
+
+community_pkg () {
+
+	echo 'Installing community packages'
+
+	yaourt \
+		touchegg \
+		google-chrome \
+		spotify \
+		insync \
+		swift
+}
 
 # Install Gnupg
 #if hash gpg 2>/dev/null; then
