@@ -8,28 +8,29 @@ fi
 
 
 # Installing supported packages
-echo 'Installing supported packages'
+#echo 'Installing supported packages'
 
-sudo pacman -S \
-	xf86-input-libinput \
-	gnupg \
-	redshift \
-	ruby \
-	zsh \
-	zsh-completions \
-	nodejs \
-	npm \
-	neovim \
-	python2-neovim \
-	python-neovim \
-	jq
+#sudo pacman -S \
+	#	xf86-input-libinput \
+	#	gnupg \
+	#	redshift \
+	#	ruby \
+	#	zsh \
+	#	zsh-completions \
+	#	nodejs \
+	#	npm \
+	#	neovim \
+	#	python2-neovim \
+	#	python-neovim \
+	#	jq \
+	#	go
 
-echo 'Installing community packages'
-yaourt \
-	touchegg \
-	google-chrome \
-	spotify \
-	insync
+#echo 'Installing community packages'
+#yaourt \
+	#	touchegg \
+	#	google-chrome \
+	#	spotify \
+	#	insync
 
 # Install Gnupg
 #if hash gpg 2>/dev/null; then
@@ -39,22 +40,25 @@ yaourt \
 #	sudo pacman -S gnupg
 #fi
 
-if hash /usr/local/go/bin/go 2>/dev/null; then
-	echo 'GoLang already installed'
-else
-	echo 'Installing GoLang 1.7'
-	wget "https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz" -P /tmp && sudo tar -C /usr/local -xzf /tmp/go1.7.3.linux-amd64.tar.gz
-fi
+#if hash /usr/local/go/bin/go 2>/dev/null; then
+#	echo 'GoLang already installed'
+#else
+#	echo 'Installing GoLang 1.7'
+#	wget
+#"https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz" -P /tmp && sudo tar -C /usr/local -xzf
+#/tmp/go1.7.3.linux-amd64.tar.gz
+#fi
 
 
-echo 'Setup Neovim and Plug'
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#echo 'Setup Neovim and Plug'
+#curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+	#
+#https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo 'Installling Rust'
-curl -sSf https://static.rust-lang.org/rustup.sh | sh
+#echo 'Installling Rust'
+#curl -sSf https://static.rust-lang.org/rustup.sh | sh
 # Code completion for rust
-cargo install racer
+#cargo install racer
 
 echo 'Setting up Development environment'
 devDir=$HOME/Development
@@ -62,26 +66,28 @@ if [ ! -d "$devDir" ]; then
 	mkdir $devDir
 fi
 
-if hash terraform 2>/dev/null; then
-	echo 'Terraform already installed'
-else
-	echo 'Installing Terraform'
-	terraform_url=$(curl --silent https://releases.hashicorp.com/index.json | jq '{terraform}' | egrep "linux.*64" | sort -rh | head -1 | awk -F[\"] '{print $4}')
-	terDir=$devDir/terraform
-	mkdir $terDir
-	curl -o $terDir/terraform.zip $terraform_url
-	cd $terDir
-	unzip terraform.zip
-	rm terraform.zip
-	cd $HOME
-fi
+#if hash terraform 2>/dev/null; then
+#	echo 'Terraform already installed'
+#else
+#	echo 'Installing Terraform'
+#	terraform_url=$(curl --silent
+#https://releases.hashicorp.com/index.json | jq '{terraform}' | egrep "linux.*64" | sort -rh | head -1 | awk -F[\"] '{print $4}')
+#	terDir=$devDir/terraform
+#	mkdir $terDir
+#	curl -o $terDir/terraform.zip $terraform_url
+#	cd $terDir
+#	unzip terraform.zip
+#	rm terraform.zip
+#	cd $HOME
+#fi
 
-echo 'Installing Amazon AWS CLI'
-curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "/tmp/awscli-bundle.zip"
-cd /tmp
-unzip awscli-bundle.zip
-sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-cd $HOME
+#echo 'Installing Amazon AWS CLI'
+#curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o
+#"/tmp/awscli-bundle.zip"
+#cd /tmp
+#unzip awscli-bundle.zip
+#sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+#cd $HOME
 
 goDir=$devDir/go
 if [ ! -d "$goDir" ]; then
