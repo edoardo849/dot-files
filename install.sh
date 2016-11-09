@@ -251,3 +251,5 @@ global_npm
 install_amazonawscli
 
 link_dotfiles
+
+echo 'Done. Import your gpg keys!'
