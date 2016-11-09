@@ -129,10 +129,10 @@ install_amazonawscli () {
 		continue
 	else
 		echo "Installing AWS CLI"
-		curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "/tmp/awscli-bundle.zip"
 		cd /tmp
-		unzip awscli-bundle.zip
-		sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+		curl -O https://bootstrap.pypa.io/get-pip.py
+		sudo python get-pip.py
+		sudo pip install awscli --ignore-installed six
 		cd $HOME
 	fi
 
