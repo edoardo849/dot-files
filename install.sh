@@ -252,6 +252,8 @@ link_dotfiles () {
 
 install_pacman
 
+remove_synaptic
+
 install_yaourt
 
 install_rust
