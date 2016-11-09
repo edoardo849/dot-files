@@ -49,6 +49,20 @@ install_yaourt () {
 }
 
 
+remove_synaptic () {
+	if [[ "no" == $(ask_yes_or_no "Remove Synaptic driver ?")  ]]
+	then
+		echo "Skipped."
+		return 1
+	else
+		echo "Removing the synaptic Driver"
+
+		sudo pacman -R xf86-input-synaptics
+		sudo mv /etc/X11/xorg.conf.d/50-synaptics.conf ~/
+	fi
+}
+
+
 install_rust () {
 	if [[ "no" == $(ask_yes_or_no "Install Rust ?")  ]]
 	then

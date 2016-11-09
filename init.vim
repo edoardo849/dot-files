@@ -104,4 +104,4 @@ let g:go_list_type = "quickfix"
 
 " " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-
+let b:deoplete_ignore_sources = ['buffer']
