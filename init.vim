@@ -52,8 +52,10 @@ let $RUST_SRC_PATH="~/src/rust/src"
 
 " " Make NERDTree always open on the right side
 let g:NERDTreeWinPos = "left"
+let NERDTreeShowHidden = 1
 
-" " Map the leader to the space key
+
+" DTreeShowHidden=1to the space key
 let mapleader = "\<Space>"
 
 " " Type <Space>o to open a new file
@@ -105,3 +107,18 @@ let g:go_list_type = "quickfix"
 " " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 let b:deoplete_ignore_sources = ['buffer']
+
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+	let l:file = expand('%')
+	if l:file =~# '^\f\+_test\.go$'
+		call go#cmd#Test(0, 1)
+	elseif l:file =~# '^\f\+\.go$'
+		call go#cmd#Build(0)
+	endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+" Toggle gocover on super + C
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)

@@ -45,3 +45,5 @@
 
 [difftool "nvimdiff"]
 	cmd = diff_wrapper "$LOCAL" "$REMOTE"
+[credential]
+	helper = gnome-keyring
