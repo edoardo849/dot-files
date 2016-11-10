@@ -152,6 +152,26 @@ install_amazonawscli () {
 
 }
 
+
+install_gnomeExtensions() {
+	if [[ "no" == $(ask_yes_or_no "Install GNOME extensions?")  ]]
+	then
+		echo "Skipped."
+		return 1
+	else
+		# Installation Instructions from https://github.com/deadalnix/pixel-saver
+		git clone git clone https://github.com/deadalnix/pixel-saver.git /tmp/pixel-saver
+		cd /tmp/pixel-saver
+		git checkout 1.9
+		cp -r pixel-saver@deadalnix.me -t ~/.local/share/gnome-shell/extensions
+		gnome-shell-extension-tool -e pixel-saver@deadalnix.me
+		cd $HOME
+	fi
+
+
+}
+
+
 link_dotfiles () {
 	if [[ "no" == $(ask_yes_or_no "Link config to dotfiles ?")  ]]
 	then
@@ -254,6 +274,8 @@ install_pacman
 remove_synaptic
 
 install_yaourt
+
+install_gnomeExtensions
 
 install_rust
 
