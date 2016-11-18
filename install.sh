@@ -31,7 +31,7 @@ install_pacman () {
 
 install_yaourt () {
 	echo 'Installing AUR packages'
-	installPkgs=('touchegg' 'google-chrome' 'spotify' 'insync' 'swift' 'ttf-monaco')
+	installPkgs=('touchegg' 'google-chrome' 'spotify' 'insync' 'swift' 'ttf-monaco' 'go-fonts-git')
 	for i in "${installPkgs[@]}"
 	do
 		if [[ "no" == $(ask_yes_or_no "Install $i ?")  ]]
