@@ -12,7 +12,7 @@ function ask_yes_or_no() {
 
 install_pacman () {
 	echo 'Installing Pacman packages'
-	installPkgs=('gnupg' 'xf86-input-libinput' 'redshift' 'ruby' 'zsh' 'zsh-completions' 'nodejs' 'npm'  'neovim' 'python2-neovim' 'python-neovim' 'jq' 'go' 'clang' 'gnome-keyring' 'opera')
+	installPkgs=('gnupg' 'xf86-input-libinput' 'redshift' 'ruby' 'zsh' 'zsh-completions' 'nodejs' 'npm'  'neovim' 'python2-neovim' 'python-neovim' 'jq' 'go' 'clang' 'gnome-keyring' 'opera' 'docker' )
 
 	for i in "${installPkgs[@]}"
 	do
@@ -31,7 +31,7 @@ install_pacman () {
 
 install_yaourt () {
 	echo 'Installing AUR packages'
-	installPkgs=('touchegg' 'google-chrome' 'spotify' 'insync' 'swift' 'ttf-monaco' 'slack-desktop')
+	installPkgs=('touchegg' 'google-chrome' 'spotify' 'insync' 'swift' 'ttf-monaco')
 	for i in "${installPkgs[@]}"
 	do
 		if [[ "no" == $(ask_yes_or_no "Install $i ?")  ]]
