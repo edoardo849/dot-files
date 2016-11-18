@@ -88,7 +88,7 @@ setup_neovim_plug () {
 
 }
 
-terraform () {
+install_terraform () {
 
 	if [[ "no" == $(ask_yes_or_no "Install Terraform ?")  ]]
 	then
@@ -114,7 +114,7 @@ terraform () {
 	fi
 }
 
-global_npm () {
+install_globalNpm () {
 	echo 'Installing NPM global packages'
 	installPkgs=('js-beautify')
 
@@ -133,8 +133,7 @@ global_npm () {
 
 }
 
-
-install_amazonawscli () {
+install_amazonAWSCli () {
 	if [[ "no" == $(ask_yes_or_no "Install AWS CLI ?")  ]]
 	then
 		echo "Skipped."
@@ -280,11 +279,11 @@ install_rust
 
 setup_neovim_plug
 
-terraform
+install_terraform
 
-global_npm
+install_globalNpm
 
-install_amazonawscli
+install_amazonAWSCli
 
 link_dotfiles
 
