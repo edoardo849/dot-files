@@ -40,6 +40,9 @@ let g:molokai_original = 1
 let g:rehash256 = 1
 colorscheme molokai
 
+" let g:Guifont = "DejaVu Sans Mono:h13"
+
+
 " " Perform terraform FMT on save
 let g:terraform_fmt_on_save = 1
 

@@ -12,7 +12,7 @@ function ask_yes_or_no() {
 
 install_pacman () {
 	echo 'Installing Pacman packages'
-	installPkgs=('gnupg' 'xf86-input-libinput' 'redshift' 'ruby' 'zsh' 'zsh-completions' 'nodejs' 'npm'  'neovim' 'python2-neovim' 'python-neovim' 'jq' 'go' 'clang' 'gnome-keyring' 'opera' 'docker' )
+	installPkgs=('gnupg' 'xf86-input-libinput' 'redshift' 'ruby' 'zsh' 'zsh-completions' 'nodejs' 'npm'  'neovim' 'python2-neovim' 'python-neovim' 'jq' 'go' 'clang' 'gnome-keyring' 'opera' 'docker' 'geth' )
 
 	for i in "${installPkgs[@]}"
 	do
