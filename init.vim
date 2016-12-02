@@ -67,6 +67,8 @@ nnoremap <Leader>o :CtrlP<CR>
 " " Type <Space>w to save file
 nnoremap <Leader>w :w<CR>
 
+" " Type <Space>q to quit file
+nnoremap <Leader>q :q<CR>
 " " Copy & paste to system clipboard with <Space>p and <Space>y
 vmap <Leader>y "+y
 vmap <Leader>d "+d
