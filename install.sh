@@ -12,7 +12,7 @@ function ask_yes_or_no() {
 
 install_pacman () {
 	echo 'Installing Pacman packages'
-	installPkgs=('gnupg' 'xf86-input-libinput' 'redshift' 'ruby' 'zsh' 'zsh-completions' 'nodejs' 'npm'  'neovim' 'python2-neovim' 'python-neovim' 'jq' 'go' 'clang' 'gnome-keyring' 'opera' 'docker' 'docker-compose' )
+	installPkgs=('gnupg' 'xf86-input-libinput' 'redshift' 'ruby' 'zsh' 'zsh-completions' 'nodejs' 'npm'  'neovim' 'python2-neovim' 'python-neovim' 'jq' 'go' 'clang' 'gnome-keyring' 'opera' 'docker' 'docker-compose' 'libreoffice' )
 
 	for i in "${installPkgs[@]}"
 	do
@@ -193,7 +193,7 @@ link_dotfiles () {
 		vimFile=$HOME/.vimrc
 		if [ -f "$vimFile" ] && [ ! -L "$vimFile" ]; then
 			echo "- Backing up $vimFile"
-			mv $vimFile $vimFile.backup
+			mv $vimFile $vimFile.backup0.0.0.0
 		fi
 
 		if [ ! -L "$vimFile" ]; then
@@ -290,6 +290,7 @@ link_dotfiles
 # Enable SystemCtl daemons
 
 # Docker
+sudo gpasswd -a $USER  docker
 sudo systemctl enable docker
 sudo systemctl start docker
 
