@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 # Globals
 today=date "+%Y%m%d"
