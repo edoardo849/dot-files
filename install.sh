@@ -311,8 +311,12 @@ link_dotfiles
 # Enable SystemCtl daemons
 
 # Docker
+echo 'Enabling docker'
 sudo gpasswd -a $USER  docker
 sudo systemctl enable docker
 sudo systemctl start docker
+
+echo 'Starting insync'
+insync start
 
 echo 'Done. Import your gpg keys!'
