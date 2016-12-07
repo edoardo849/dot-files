@@ -130,22 +130,7 @@ install_terraform () {
 		echo "Skipped."
 		return 1
 	else
-		echo "Installing Terraform"
-		if hash terraform 2>/dev/null; then
-			echo 'Terraform already installed'
-		else
-			echo 'Installing Terraform'
-			terraform_url=$(curl --silent
-			https://releases.hashicorp.com/index.json | jq '{terraform}' | egrep "linux.*64" | sort -rh | head -1 | awk -F[\"] '{print $4}')
-			terDir=$devDir/terraform
-			mkdir $terDir
-			curl -o $terDir/terraform.zip $terraform_url
-			cd $terDir
-			unzip terraform.zip
-			rm terraform.zip
-			cd $HOME
-		fi
-
+		bash ./install_terraform.sh
 	fi
 }
 

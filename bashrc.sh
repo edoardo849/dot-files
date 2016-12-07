@@ -6,7 +6,7 @@ export GOPATH=$HOME/Development/go
 export RUBYPATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin
 
 # Terraform
-export TERRAFORM=$HOME/Development/terraform
+export TERRAFORM=$HOME/.terraform
 
 # Rust
 export RUST_SRC_PATH="$HOME/src/rust/src"
