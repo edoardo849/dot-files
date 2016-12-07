@@ -287,4 +287,10 @@ install_amazonAWSCli
 
 link_dotfiles
 
+# Enable SystemCtl daemons
+
+# Docker
+sudo systemctl enable docker
+sudo systemctl start docker
+
 echo 'Done. Import your gpg keys!'
