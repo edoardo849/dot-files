@@ -1,8 +1,13 @@
 #!/bin/bash
 
 # Globals
-today=date "+%Y%m%d"
+today=$(date +"%Y%m%d")
+dotFilesDir="$HOME/.dotfiles"
 
+if [ ! -d "$dotFilesDir" ]; then
+	# Clone the latest repo
+	git clone https://github.com/edoardo849/dot-files $dotFilesDir
+fi
 
 function ask_yes_or_no() {
 	read -p "$1 ([y]es or [N]o): "
@@ -15,6 +20,7 @@ function ask_yes_or_no() {
 install_pacman () {
 	echo 'Installing Pacman packages'
 	installPkgs=(
+	'ffmpeg'
 	'gnupg'
 	'xf86-input-libinput'
 	'redshift'
@@ -58,9 +64,6 @@ install_yaourt () {
 	'google-chrome'
 	'spotify'
 	'insync'
-	'swift'
-	'ttf-monaco'
-	'go-fonts-git'
 	)
 	for i in "${installPkgs[@]}"
 	do
@@ -279,7 +282,7 @@ link_dotfiles () {
 
 		if [ ! -L "$zshConfig" ]; then
 			echo "- Linking $zshConfig to $dotFiles"
-			ln -s $dotFiles/zshrc.sh $zshConfig
+			ln -s $dotFiles/system/.zshrc $zshConfig
 		fi
 
 		echo 'Success! Now run "chsh -s /bin/zsh" to setup zsh as the default shell and run :PlugInstall from within nvim'

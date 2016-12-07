@@ -4,21 +4,11 @@ To Install on [Antergos](https://antergos.com/) Arch, just run:
 
 ```bash
 
-sh -c "$(wget https://raw.githubusercontent.com/edoardo849/dot-files/arch/install.sh)"
+bash <(curl -s https://raw.githubusercontent.com/edoardo849/dot-files/arch/install.sh)
 
 ```
 
-This script will setup the standard programming environment with:
-- Golang
-- Rust
-- Ruby
-- NodeJS
-- Google Chrome
-- Spotify
-- Redshift
-- NeoVim
-- Oh My Zsh
-- ... several dependencies.
+https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.kxhx1wfbf
 
 To fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archlinux.org/index.php/Razer) wiki page.
 
