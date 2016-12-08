@@ -4,7 +4,7 @@
 	signingkey = CF70767C
 [core]
 	editor = nvim
-	excludesfile = ~/.dotfiles/gitignore_global
+	excludesfile = ~/.dotfiles/conf/.gitignore_global
 
 [filter "lfs"]
 	required = true

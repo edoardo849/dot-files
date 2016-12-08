@@ -133,7 +133,7 @@ install_terraform () {
 		echo "Skipped."
 		return 1
 	else
-		bash ./install_terraform.sh
+		bash $HOME/installers/install_terraform.sh
 	fi
 }
 
@@ -233,7 +233,7 @@ link_dotfiles () {
 
 		if [ ! -L "$redshiftConf" ]; then
 			echo "- Linking $redshiftConf to $dotFiles"
-			ln -s $dotFiles/redshift.conf $redshiftConf
+			ln -s $dotFiles/conf/redshift.conf $redshiftConf
 		fi
 
 		vimConfig=$HOME/.config/nvim/init.vim
@@ -263,7 +263,7 @@ link_dotfiles () {
 
 		if [ ! -L "$gitConfig" ]; then
 			echo "- Likning $gitConfig to $dotFiles"
-			ln -s $dotFiles/gitconfig $gitConfig
+			ln -s $dotFiles/conf/.gitconfig $gitConfig
 		fi
 
 		# ZSH Config
