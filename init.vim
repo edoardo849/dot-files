@@ -52,7 +52,6 @@ set hidden
 let g:racer_cmd = "~/.cargo/bin/racer"
 let $RUST_SRC_PATH="~/src/rust/src"
 
-
 " " Make NERDTree always open on the right side
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden = 1
