@@ -1,6 +1,7 @@
 Dot Files
 ===
-To Install on [Antergos](https://antergos.com/) Arch, just run:
+
+My DotFiles. This branch is meant to be installed on the [Antergos](https://antergos.com/) Arch Linux distribution. To set-up the system, just run:
 
 ```bash
 
@@ -10,7 +11,7 @@ bash <(curl -s https://raw.githubusercontent.com/edoardo849/dot-files/arch/insta
 
 https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.kxhx1wfbf
 
-To fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archlinux.org/index.php/Razer) wiki page.
+T fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archlinux.org/index.php/Razer) wiki page.
 
 ## NeoVim
 Cheatsheets:
@@ -27,9 +28,14 @@ Plugins:
 
 
 How Tos:
+- http://nerditya.com/code/guide-to-neovim/
 
 ### Select Multiple lines
-To select multiple lines, press v or V and then the arrow keys to go up and down. If the mappings are set up ar to sheerun's post, then do `SPACE + y` to copy and `SPACE + p` to paste.
+To select multiple lines, press v or V and then the arrow keys to go up and down. If the mappings are set up ar to sheerun's post, then do:
+- `SPACE + y` to copy
+- `SPACE + p` to paste
+- `SPACE + d` to cut
+- `CTRL + n` to multi-edit with [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) plugin
 
 ### NerdTree commands
 Type :help NERDTreeMappings to read through all of the default keyboard shortcuts. These are the ones I use the most frequently:

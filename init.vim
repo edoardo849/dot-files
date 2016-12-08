@@ -4,17 +4,17 @@ call plug#begin('~/.vim/plugged')
 Plug 'fatih/molokai'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'terryma/vim-multiple-cursors'
+
 " " Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'Chiel92/vim-autoformat'
 
 " " Syntax checking hacks for vim
 Plug 'scrooloose/syntastic'
-
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 
 " " Programming Languages features
-
 Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go'
 Plug 'moll/vim-node'
