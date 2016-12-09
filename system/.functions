@@ -27,3 +27,5 @@ extract() {
 		echo "'$1' is not a valid file to extract"
 			fi
 }
+
+mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2" }
