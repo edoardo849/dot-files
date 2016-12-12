@@ -45,6 +45,6 @@
 
 [difftool "nvimdiff"]
 	cmd = diff_wrapper "$LOCAL" "$REMOTE"
-[credential]
+#[credential]
 	# Use osxkeychain on Mac
-	helper = gnome-keyring
+#	helper = gnome-keyring

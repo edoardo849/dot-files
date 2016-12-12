@@ -51,8 +51,8 @@ install_pacman () {
 		else
 			echo "Installing $i"
 			sudo pacman -S $i
+			fienv GIT_TERMINAL_PROMPT=1 go get
 		fi
-
 	done
 
 }
@@ -133,7 +133,7 @@ install_terraform () {
 		echo "Skipped."
 		return 1
 	else
-		bash $HOME/installers/install_terraform.sh
+		bash $HOME/.dotfiles/installers/install_terraform.sh
 	fi
 }
 
@@ -222,7 +222,7 @@ link_dotfiles () {
 
 		if [ ! -L "$vimFile" ]; then
 			echo "- Linking $vimFile to $dotFiles"
-			ln -s $dotFiles/init.vim $vimFile
+			ln -s $dotFilesDir/init.vim $vimFile
 		fi
 
 		redshiftConf=$HOME/.config/redshift.conf
@@ -244,14 +244,14 @@ link_dotfiles () {
 
 		if [ ! -L "$vimConfig" ]; then
 			echo "- Linking $vimConfig to $dotFiles"
-			ln -s $dotFiles/init.vim $vimConfig
+			ln -s $dotFilesDir/init.vim $vimConfig
 		fi
 
 		vimColorFolder=$HOME/.vim/colors
 
 		if [ ! -L "$vimColorFolder" ]; then
 			echo "- Backing up $vimColorFolder"
-			ln -s $dotFiles/vim/colors $vimColorFolder
+			ln -s $dotFilesDir/vim/colors $vimColorFolder
 		fi
 
 		# GIT Config
@@ -263,7 +263,7 @@ link_dotfiles () {
 
 		if [ ! -L "$gitConfig" ]; then
 			echo "- Likning $gitConfig to $dotFiles"
-			ln -s $dotFiles/conf/.gitconfig $gitConfig
+			ln -s $dotFilesDir/conf/.gitconfig $gitConfig
 		fi
 
 		# ZSH Config
@@ -282,7 +282,7 @@ link_dotfiles () {
 
 		if [ ! -L "$zshConfig" ]; then
 			echo "- Linking $zshConfig to $dotFiles"
-			ln -s $dotFiles/system/.zshrc $zshConfig
+			ln -s $dotFilesDir/system/.zshrc $zshConfig
 		fi
 
 		echo 'Success! Now run "chsh -s /bin/zsh" to setup zsh as the default shell and run :PlugInstall from within nvim'
