@@ -36,10 +36,10 @@ install_pacman () {
 	'go'
 	'clang'
 	'gnome-keyring'
-	'opera'
 	'docker'
 	'docker-compose'
 	'libreoffice'
+	'chromium'
 	)
 
 	for i in "${installPkgs[@]}"
@@ -64,6 +64,7 @@ install_yaourt () {
 	'google-chrome'
 	'spotify'
 	'insync'
+	'chromium-widevine'
 	)
 	for i in "${installPkgs[@]}"
 	do
@@ -233,7 +234,7 @@ link_dotfiles () {
 
 		if [ ! -L "$redshiftConf" ]; then
 			echo "- Linking $redshiftConf to $dotFiles"
-			ln -s $dotFiles/conf/redshift.conf $redshiftConf
+			ln -s $dotFilesDir/conf/redshift.conf $redshiftConf
 		fi
 
 		vimConfig=$HOME/.config/nvim/init.vim
