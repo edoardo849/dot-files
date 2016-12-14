@@ -22,7 +22,7 @@ install_pacman () {
 	installPkgs=(
 	'ffmpeg'
 	'gnupg'
-	'xf86-input-libinput'
+	#'xf86-input-libinput'
 	'redshift'
 	'ruby'
 	'zsh'
@@ -61,7 +61,6 @@ install_yaourt () {
 	echo 'Installing AUR packages'
 	installPkgs=(
 	'touchegg'
-	'google-chrome'
 	'spotify'
 	'insync'
 	'chromium-widevine'
@@ -81,18 +80,18 @@ install_yaourt () {
 }
 
 
-remove_synaptic () {
-	if [[ "no" == $(ask_yes_or_no "Remove Synaptic driver ?")  ]]
-	then
-		echo "Skipped."
-		return 1
-	else
-		echo "Removing the synaptic Driver"
-
-		sudo pacman -R xf86-input-synaptics
-		sudo mv /etc/X11/xorg.conf.d/50-synaptics.conf ~/
-	fi
-}
+#remove_synaptic () {
+#	if [[ "no" == $(ask_yes_or_no "Remove Synaptic driver ?")  ]]
+#	then
+#		echo "Skipped."
+#		return 1
+#	else
+#		echo "Removing the synaptic Driver"
+#
+#		sudo pacman -R xf86-input-synaptics
+#		sudo mv /etc/X11/xorg.conf.d/50-synaptics.conf ~/
+#	fi
+#}
 
 
 install_rust () {
