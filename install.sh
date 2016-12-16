@@ -118,10 +118,33 @@ setup_neovim_zsh () {
 		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-		echo "Installing patches for the Agnostic theme"
+		echo "Installing patches for ZSH's Agnostic theme"
 		git clone https://github.com/powerline/fonts
 		bash fonts/install.sh
 		rm -rf fonts
+
+		echo "Installing ZSH"
+
+		# ZSH Config
+		zshConfig=$HOME/.zshrc
+		if [ -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
+			echo "- Backing up $zshConfig"
+			mv $zshConfig $zshConfig.$backupExt
+		fi
+
+
+		if [ ! -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
+			echo "- Setting up Zsh"
+			sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+		fi
+
+
+		if [ ! -L "$zshConfig" ]; then
+			echo "- Linking $zshConfig to $dotFiles"
+			ln -s $dotFilesDir/system/.zshrc $zshConfig
+		fi
+
+
 	fi
 
 }
@@ -189,9 +212,7 @@ install_gnomeExtensions() {
 		cd $HOME
 	fi
 
-
 }
-
 
 link_dotfiles () {
 	if [[ "no" == $(ask_yes_or_no "Link config to dotfiles ?")  ]]
@@ -265,26 +286,6 @@ link_dotfiles () {
 			echo "- Likning $gitConfig to $dotFiles"
 			ln -s $dotFilesDir/conf/.gitconfig $gitConfig
 		fi
-
-		# ZSH Config
-		zshConfig=$HOME/.zshrc
-		if [ -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
-			echo "- Backing up $zshConfig"
-			mv $zshConfig $zshConfig.$backupExt
-		fi
-
-
-		if [ ! -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
-			echo "- Setting up Zsh"
-			sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-		fi
-
-
-		if [ ! -L "$zshConfig" ]; then
-			echo "- Linking $zshConfig to $dotFiles"
-			ln -s $dotFilesDir/system/.zshrc $zshConfig
-		fi
-
 		echo 'Success! Now run "chsh -s /bin/zsh" to setup zsh as the default shell and run :PlugInstall from within nvim'
 	fi
 }
@@ -301,8 +302,6 @@ install_gnomeExtensions
 
 install_rust
 
-setup_neovim_zsh
-
 install_terraform
 
 install_globalNpm
@@ -317,9 +316,13 @@ link_dotfiles
 echo 'Enabling docker'
 sudo gpasswd -a $USER  docker
 sudo systemctl enable docker
+
+echo 'Starting docker'
 sudo systemctl start docker
 
 echo 'Starting insync'
 insync start
+
+setup_neovim_zsh
 
 echo 'Done. Import your gpg keys!'
