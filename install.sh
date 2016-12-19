@@ -80,18 +80,25 @@ install_yaourt () {
 }
 
 
-#remove_synaptic () {
-#	if [[ "no" == $(ask_yes_or_no "Remove Synaptic driver ?")  ]]
-#	then
-#		echo "Skipped."
-#		return 1
-#	else
-#		echo "Removing the synaptic Driver"
-#
-#		sudo pacman -R xf86-input-synaptics
-#		sudo mv /etc/X11/xorg.conf.d/50-synaptics.conf ~/
-#	fi
-#}
+remove_pacman () {
+	echo 'Removing Pacman packages'
+	installPkgs=(
+	'brasero'
+	)
+
+	for i in "${installPkgs[@]}"
+	do
+		if [[ "no" == $(ask_yes_or_no "Remove $i ?")  ]]
+		then
+			echo "$i skipped."
+			continue
+		else
+			echo "Removing $i"
+			sudo pacman -R $i
+			fienv GIT_TERMINAL_PROMPT=1 go get
+		fi
+	done
+}
 
 
 install_rust () {
@@ -203,10 +210,12 @@ install_gnomeExtensions() {
 		echo "Skipped."
 		return 1
 	else
+		echo 'Installing deadalnix/pixel-saver'
 		# Installation Instructions from https://github.com/deadalnix/pixel-saver
 		git clone git clone https://github.com/deadalnix/pixel-saver.git /tmp/pixel-saver
 		cd /tmp/pixel-saver
 		git checkout 1.9
+		mkdir  ~/.local/share/gnome-shell/extensions
 		cp -r pixel-saver@deadalnix.me -t ~/.local/share/gnome-shell/extensions
 		gnome-shell-extension-tool -e pixel-saver@deadalnix.me
 		cd $HOME
@@ -294,7 +303,7 @@ link_dotfiles () {
 
 install_pacman
 
-remove_synaptic
+remove_pacman
 
 install_yaourt
 
