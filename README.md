@@ -1,7 +1,7 @@
 Dot Files
 ===
 
-My DotFiles. This branch is meant to be installed on the [Antergos](https://antergos.com/) Arch Linux distribution. To set-up the system, just run:
+My DotFiles. This branch is meant to be installed on an [Antergos](https://antergos.com/) Arch Linux distribution. To set-up the system, just run:
 
 ```bash
 
@@ -11,7 +11,7 @@ bash <(curl -s https://raw.githubusercontent.com/edoardo849/dot-files/arch/insta
 
 https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.kxhx1wfbf
 
-T fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archlinux.org/index.php/Razer) wiki page.
+To fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archlinux.org/index.php/Razer) wiki page.
 
 ## NeoVim
 Cheatsheets:
@@ -48,6 +48,17 @@ m: Show the NERD Tree menu
 R: Refresh the tree, useful if files change outside of Vim
 ?: Toggle NERD Tree's quick help
 
+## Antergos
+### Modify login background
+
+```bash
+
+# Copy any .jpg file into /usr/share/antergos/wallpapers
+sudo cp path/to/file.jpg /usr/share/antergos/wallpapers
+
+```
+
+
 ## Razer-blade
 ### Lid status
 
@@ -62,3 +73,4 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet button.lid_init_state=open"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
+
