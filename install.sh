@@ -40,6 +40,7 @@ install_pacman () {
 	'docker-compose'
 	'libreoffice'
 	'chromium'
+	'vlc'
 	)
 
 	for i in "${installPkgs[@]}"

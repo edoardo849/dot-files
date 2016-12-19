@@ -48,3 +48,17 @@ m: Show the NERD Tree menu
 R: Refresh the tree, useful if files change outside of Vim
 ?: Toggle NERD Tree's quick help
 
+## Razer-blade
+### Lid status
+
+```bash
+
+sudo nano /etc/default/grub
+
+# Modify this line adding "button.lid_init_state=open"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet button.lid_init_state=open"
+
+# And then automatically re-generate the grub.cfg file
+grub-mkconfig -o /boot/grub/grub.cfg
+
+```
