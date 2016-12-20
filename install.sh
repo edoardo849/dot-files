@@ -65,6 +65,7 @@ install_yaourt () {
 	'spotify'
 	'insync'
 	'chromium-widevine'
+	'keybase-bin'
 	)
 	for i in "${installPkgs[@]}"
 	do
