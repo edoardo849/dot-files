@@ -125,7 +125,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_fenced_languages = ['bash=sh', 'go' ]
-
+set conceallevel=1
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
