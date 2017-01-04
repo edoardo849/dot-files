@@ -20,6 +20,9 @@ Plug 'fatih/vim-go'
 Plug 'moll/vim-node'
 Plug 'rust-lang/rust.vim'
 
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 " " Provide autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
@@ -115,6 +118,13 @@ let g:go_list_type = "quickfix"
 " " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 let b:deoplete_ignore_sources = ['buffer']
+
+
+" " Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_fenced_languages = ['bash=sh', 'go' ]
 
 
 " run :GoBuild or :GoTestCompile based on the go file
