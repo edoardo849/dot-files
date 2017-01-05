@@ -41,6 +41,7 @@ install_pacman () {
 	'libreoffice'
 	'chromium'
 	'vlc'
+	'ttf-liberation' # this is an Arial font replacement, useful for Steam
 	)
 
 	for i in "${installPkgs[@]}"
