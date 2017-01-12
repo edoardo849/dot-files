@@ -58,7 +58,7 @@ let $RUST_SRC_PATH="~/src/rust/src"
 " " Make NERDTree always open on the right side
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden = 1
-
+let NERDTreeBookmarksFile = expand("$HOME/.dotfiles/conf/.NERDTreeBookmarks")
 
 " DTreeShowHidden=1to the space key
 let mapleader = "\<Space>"
@@ -118,7 +118,6 @@ let g:go_list_type = "quickfix"
 " " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 let b:deoplete_ignore_sources = ['buffer']
-
 
 " " Markdown
 let g:vim_markdown_folding_disabled = 1
