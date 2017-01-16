@@ -39,7 +39,7 @@ install_pacman () {
 	'docker'
 	'docker-compose'
 	'libreoffice'
-	'chromium'
+	'firefox'
 	'vlc'
 	'ttf-liberation' # this is an Arial font replacement, useful for Steam
 	)
