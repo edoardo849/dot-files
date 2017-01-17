@@ -13,6 +13,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
+Plug 'majutsushi/tagbar'
 
 " " Programming Languages features
 Plug 'hashivim/vim-terraform'
@@ -81,6 +82,7 @@ vmap <Leader>P "+P
 
 " " Open NerdTree with <Space>n
 map <Leader>n  :NERDTreeToggle<CR>
+nmap <Leader>t :TagbarToggle<CR>
 
 " " have your code be formatted upon saving your file, depending on Chiel92/vim-autoformat
 au BufWrite * :Autoformat

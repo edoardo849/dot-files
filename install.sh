@@ -59,6 +59,29 @@ install_pacman () {
 
 }
 
+install_python () {
+	echo 'Installing Python packages'
+
+	sudo easy_install pip
+
+	installPkgs=(
+	)
+	for i in "${installPkgs[@]}"
+	do
+		if [[ "no" == $(ask_yes_or_no "Install $i ?")  ]]
+		then
+			echo "$i skipped."
+			continue
+		else
+			echo "Installing $i"
+			sudo pip install $i
+		fi
+
+	done
+
+
+}
+
 install_yaourt () {
 	echo 'Installing AUR packages'
 	installPkgs=(
@@ -67,6 +90,7 @@ install_yaourt () {
 	'insync'
 	'chromium-widevine'
 	'keybase-bin'
+	'universal-ctags-git'
 	)
 	for i in "${installPkgs[@]}"
 	do
@@ -307,6 +331,8 @@ link_dotfiles () {
 install_pacman
 
 remove_pacman
+
+install_python
 
 install_yaourt
 
