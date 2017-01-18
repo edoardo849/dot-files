@@ -175,7 +175,7 @@ setup_neovim_zsh () {
 
 		if [ ! -L "$zshConfig" ]; then
 			echo "- Linking $zshConfig to $dotFiles"
-			ln -s $dotFilesDir/system/.zshrc $zshConfig
+			ln -s $dotFilesDir/.zshrc $zshConfig
 		fi
 
 
