@@ -42,6 +42,7 @@ install_pacman () {
 	'firefox'
 	'vlc'
 	'ttf-liberation' # this is an Arial font replacement, useful for Steam
+	'xclip' # for nvim and general copy-pasting
 	)
 
 	for i in "${installPkgs[@]}"
@@ -157,27 +158,8 @@ setup_neovim_zsh () {
 		bash fonts/install.sh
 		rm -rf fonts
 
-		echo "Installing ZSH"
-
-		# ZSH Config
-		zshConfig=$HOME/.zshrc
-		if [ -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
-			echo "- Backing up $zshConfig"
-			mv $zshConfig $zshConfig.$backupExt
-		fi
-
-
-		if [ ! -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
-			echo "- Setting up Zsh"
-			sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-		fi
-
-
-		if [ ! -L "$zshConfig" ]; then
-			echo "- Linking $zshConfig to $dotFiles"
-			ln -s $dotFilesDir/.zshrc $zshConfig
-		fi
-
+		echo "- Setting up Zsh"
+		export ZSH="$HOME/.dotfiles/.zshrc"; sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 	fi
 
@@ -226,7 +208,6 @@ install_amazonAWSCli () {
 		sudo pip install awscli --ignore-installed six
 		cd $HOME
 	fi
-
 
 }
 
@@ -325,7 +306,6 @@ link_dotfiles () {
 		echo 'Success! Now run "chsh -s /bin/zsh" to setup zsh as the default shell and run :PlugInstall from within nvim'
 	fi
 }
-
 
 
 install_pacman
