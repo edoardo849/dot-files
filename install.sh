@@ -158,8 +158,21 @@ setup_neovim_zsh () {
 		bash fonts/install.sh
 		rm -rf fonts
 
-		echo "- Setting up Zsh"
-		export ZSH="$HOME/.dotfiles/.zshrc"; sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+		# old conf
+		zshConfig=$HOME/.zshrc
+		if [ -f "$zshConfig" ] && [ ! -L "$zshConfig" ]; then
+			echo "- Backing up $zshConfig"
+			mv $zshConfig $zshConfig.$backupExt
+		fi
+
+		if [ ! -L "$zshConfig" ]; then
+			echo "- Likning $zshConfig to $dotFiles"
+			ln -s $dotFilesDir/.zshrc $zshConfig
+		fi
+
+		echo "- Setting up Oh my Zsh"
+		sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 	fi
 
