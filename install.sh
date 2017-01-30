@@ -92,6 +92,7 @@ install_yaourt () {
 	'chromium-widevine'
 	'keybase-bin'
 	'universal-ctags-git'
+	'keybase-bin'
 	)
 	for i in "${installPkgs[@]}"
 	do
