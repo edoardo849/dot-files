@@ -330,6 +330,9 @@ install_python
 
 install_yaourt
 
+# Run and open the keybase agent
+run_keybase
+
 install_gnomeExtensions
 
 install_rust
