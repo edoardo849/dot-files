@@ -76,4 +76,14 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Post-installation
 
-Install [timezones](https://github.com/jwendell/gnome-shell-extension-timezone) gnome shell extension
+Install [timezones](https://github.com/jwendell/gnome-shell-extension-timezone) gnome shell extension.
+
+```bash
+mkdir -p ~/.local/share/gnome-shell/extensions
+
+git clone https://github.com/jwendell/gnome-shell-extension-timezone.git ~/.local/share/gnome-shell/extensions/timezone@jwendell
+
+gnome-shell-extension-tool -e timezone@jwendell
+
+ln -s $HOME/.dotfiles/conf/gse-timezone_people.json people.json
+```

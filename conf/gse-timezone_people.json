@@ -1,17 +1,18 @@
 [{
-		"name": "Dan",
-		"avatar": "https://d389zggrogs7qo.cloudfront.net/images/team/dan.jpg",
-		"city": "NYC",
+		"city": "Sydney",
+		"tz": "Australia/Sydney"
+	},
+	{
+		"city": "New York",
 		"tz": "America/New_York"
 	},
 	{
-		"name": "Niel",
-		"gravatar": "niel@example.com",
-		"city": "Cape Town",
-		"tz": "Africa/Johannesburg"
+		"city": "Delhi",
+		"tz": "India/Delhi"
 	},
 	{
-		"github": "torvalds",
-		"tz": "America/Los_Angeles"
+		"city": "Torino",
+		"tz": "Italy/Rome"
 	}
+
 ]
