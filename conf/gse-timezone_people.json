@@ -8,11 +8,11 @@
 	},
 	{
 		"city": "Delhi",
-		"tz": "India/Delhi"
+		"tz": "Asia/Calcutta"
 	},
 	{
 		"city": "Torino",
-		"tz": "Italy/Rome"
+		"tz": "Europe/Rome"
 	}
 
 ]
