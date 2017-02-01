@@ -17,7 +17,7 @@ To fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archl
 Cheatsheets:
 - http://vim.rtorr.com/
 
-Config:
+	Config:
 - https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 - https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
 - http://www.zhubert.com/blog/2014/02/11/setting-up-go/ GOPATH for zsh
@@ -74,3 +74,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
+## Post-installation
+
+Install [timezones](https://github.com/jwendell/gnome-shell-extension-timezone) gnome shell extension
