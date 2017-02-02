@@ -93,6 +93,7 @@ install_yaourt () {
 	'keybase-bin'
 	'universal-ctags-git'
 	'keybase-bin'
+	'gnome-shell-pomodoro'
 	)
 	for i in "${installPkgs[@]}"
 	do
