@@ -74,6 +74,18 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
+Setup webcam
+
+```bash
+nvim /etc/modprobe.d/uvcvideo.conf
+
+-----
+
+## fix issue with built-in webcam
+options uvcvideo quirks=512
+
+```
+
 ## Post-installation
 
 Install [timezones](https://github.com/jwendell/gnome-shell-extension-timezone) gnome shell extension.
