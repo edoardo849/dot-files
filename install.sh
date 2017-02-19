@@ -94,6 +94,7 @@ install_yaourt () {
 	'universal-ctags-git'
 	'keybase-bin'
 	'gnome-shell-pomodoro'
+	'plex-media-server-plexpass'
 	)
 	for i in "${installPkgs[@]}"
 	do
