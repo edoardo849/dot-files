@@ -34,6 +34,8 @@ call plug#end()
 " config code here
 syntax on
 
+let g:statline_syntastic = 0
+
 set number
 
 set tabstop=4
@@ -44,8 +46,10 @@ let g:molokai_original = 1
 let g:rehash256 = 1
 colorscheme molokai
 
-" let g:Guifont = "DejaVu Sans Mono:h13"
+" for MAC
+set clipboard=unnamed
 
+" let g:Guifont = "DejaVu Sans Mono:h13"
 
 " " Perform terraform FMT on save
 let g:terraform_fmt_on_save = 1
