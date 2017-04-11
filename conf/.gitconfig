@@ -47,4 +47,4 @@
 	cmd = diff_wrapper "$LOCAL" "$REMOTE"
 [credential]
 	# Use osxkeychain on Mac
-	helper = gnome-keyring
+	helper = osxkeychain
