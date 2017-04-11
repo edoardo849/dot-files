@@ -20,6 +20,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go'
 Plug 'moll/vim-node'
 Plug 'rust-lang/rust.vim'
+Plug 'mattn/emmet-vim'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -131,6 +132,10 @@ let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_fenced_languages = ['bash=sh', 'go' ]
 set conceallevel=1
+
+" " Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
