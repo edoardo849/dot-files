@@ -11,3 +11,6 @@ alias src="source ~/.zshrc"
 # Personal
 alias ld="ls -ld */"   # List in long format, only directories
 alias n="nvim"
+
+# Login to the home's RaspberryPi
+alias homepi="ssh pi@raspberrypi.local"
