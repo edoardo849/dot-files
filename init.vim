@@ -38,7 +38,8 @@ syntax on
 let g:statline_syntastic = 0
 
 set number
-
+" Enable support for mouse clicking
+set mouse=a
 set tabstop=4
 set softtabstop=0 noexpandtab
 set shiftwidth=4
