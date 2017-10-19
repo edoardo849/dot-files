@@ -17,7 +17,7 @@ Plug 'majutsushi/tagbar'
 
 " " Programming Languages features
 Plug 'hashivim/vim-terraform'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plug 'moll/vim-node'
 Plug 'rust-lang/rust.vim'
 Plug 'mattn/emmet-vim'
