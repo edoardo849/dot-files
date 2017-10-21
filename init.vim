@@ -46,7 +46,7 @@ let g:molokai_original = 1
 let g:rehash256 = 1
 colorscheme molokai
 
-" for MAC
+" for Ubuntu
 set clipboard=unnamed
 
 " let g:Guifont = "DejaVu Sans Mono:h13"
