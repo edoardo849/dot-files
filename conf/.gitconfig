@@ -1,7 +1,7 @@
 [user]
 	name = Edoardo Paolo Scalafiotti
 	email = edoardo849@gmail.com
-	signingkey = CF70767C
+	signingkey = 3401DA1D
 [core]
 	editor = nvim
 	excludesfile = ~/.dotfiles/conf/.gitignore_global

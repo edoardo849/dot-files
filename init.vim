@@ -39,6 +39,7 @@ let g:statline_syntastic = 0
 set number
 
 set tabstop=4
+set mouse=a
 set softtabstop=0 noexpandtab
 set shiftwidth=4
 
