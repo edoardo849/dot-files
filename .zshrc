@@ -64,6 +64,12 @@ done
 
 source $HOME/.cargo/env
 
+# The next line updates PATH for the Google Cloud SDK.
+source $HOME/google-cloud-sdk/path.zsh.inc
+
+# The next line enables zsh completion for gcloud.
+source $HOME/google-cloud-sdk/completion.zsh.inc
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

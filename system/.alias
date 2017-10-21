@@ -14,3 +14,8 @@ alias n="nvim"
 
 # Login to the home's RaspberryPi
 alias homepi="ssh pi@raspberrypi.local"
+
+# Login to the gcloud development server
+alias stopdev="gcloud compute instances stop --zone \"europe-west1-d\" \"dev-server\""
+alias startdev="gcloud compute instances start --zone \"europe-west1-d\" \"dev-server\""
+alias dev="gcloud compute --project \"prototyping-183615\" ssh --zone \"europe-west1-d\" \"dev-server\""
