@@ -28,7 +28,8 @@ Plug 'plasticboy/vim-markdown'
 " " Provide autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'racer-rust/vim-racer'
+" Plug 'racer-rust/vim-racer'
+Plug 'sebastianmarkow/deoplete-rust'
 
 call plug#end()
 
@@ -60,7 +61,12 @@ let g:terraform_fmt_on_save = 1
 let g:rustfmt_autosave = 1
 set hidden
 let g:racer_cmd = "~/.cargo/bin/racer"
-let $RUST_SRC_PATH="~/src/rust/src"
+
+" " Required by deoplete-rust
+let g:deoplete#sources#rust#racer_binary="~/.cargo/bin/racer"
+let g:deoplete#sources#rust#rust_source_path="~/Development/rust/rust/src"
+
+" let $RUST_SRC_PATH="~/src/rust/src"
 
 " " Make NERDTree always open on the right side
 let g:NERDTreeWinPos = "left"

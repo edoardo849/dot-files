@@ -87,3 +87,13 @@ source $HOME/google-cloud-sdk/completion.zsh.inc
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/escalafiotti/.gcloud/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/escalafiotti/.gcloud/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/escalafiotti/.gcloud/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/escalafiotti/.gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+
+# The next line is for loading the GCloud PrivateKey to run locally the VPP-Staging Firebase functions
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.ssh/vpp-staging-551a4ca14562.json"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
