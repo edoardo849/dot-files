@@ -38,6 +38,11 @@ syntax on
 
 let g:statline_syntastic = 0
 
+
+" Python
+let g:python_host_prog = '/Users/escalafiotti/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/escalafiotti/.pyenv/versions/neovim3/bin/python'
+
 set number
 " Enable support for mouse clicking
 set mouse=a

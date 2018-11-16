@@ -97,3 +97,14 @@ if [ -f '/Users/escalafiotti/.gcloud/google-cloud-sdk/completion.zsh.inc' ]; the
 # The next line is for loading the GCloud PrivateKey to run locally the VPP-Staging Firebase functions
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.ssh/vpp-staging-551a4ca14562.json"
 export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+#The next line is for Pyenv
+export PATH="/Users/escalafiotti/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
