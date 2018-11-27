@@ -8,7 +8,9 @@ export ZSH="/home/edoardo849/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="avit"
+ZSH_THEME="agnoster"
+#eval `dircolors ~/.dir_colors/dircolors`
+
 
 DEFAULT_USER=$USER
 

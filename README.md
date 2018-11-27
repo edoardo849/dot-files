@@ -9,6 +9,11 @@ bash <(curl -s https://raw.githubusercontent.com/edoardo849/dot-files/arch/insta
 
 ```
 
+For PixelSlate
+https://github.com/wernight/powerline-web-fonts
+
+
+
 https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.kxhx1wfbf
 
 To fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archlinux.org/index.php/Razer) wiki page.
