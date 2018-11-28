@@ -108,6 +108,11 @@ do
 done
 
 
+# Include GoLang
+#export PATH=$PATH:/usr/local/go/bin
+
+
+# This will start the ssh-agent on startup
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
