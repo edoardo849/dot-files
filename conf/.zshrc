@@ -135,3 +135,7 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
+# Add the SSH key
+ssh-add ~/.ssh/pixelslate
+
