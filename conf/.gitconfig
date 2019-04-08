@@ -6,3 +6,5 @@
 [github]
 	user = edoardo849
 
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
