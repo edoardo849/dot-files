@@ -18,6 +18,15 @@ https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.kxhx
 
 To fine-tune the system, visit the [Razer Blade Stealth Arch](https://wiki.archlinux.org/index.php/Razer) wiki page.
 
+
+```bash
+
+# [Install Plug for NeoVim](https://www.linode.com/docs/tools-reference/tools/how-to-install-neovim-and-plugins-with-vim-plug/)
+sudo apt-get install fuse libfuse2 git python3-pip ack-grep -y
+
+
+```
+
 ## NeoVim
 Cheatsheets:
 - http://vim.rtorr.com/
