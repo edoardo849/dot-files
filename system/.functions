@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+# Gcloud Remote Coders
+start_coder() {
+	gcloud compute instances start \
+		code-server \
+		--zone europe-west2-c
+}
+
+stop_coder() {
+	gcloud compute instances stop \
+		code-server \
+		--zone europe-west2-c
+}
+
+ssh_coder() {
+	gcloud compute ssh \
+		code-server \
+		--zone europe-west2-c
+}
